@@ -15,8 +15,6 @@ def trapezoidal(f, a, b, n):
     return h * (0.5 * f(a) + 0.5 * f(b) + sum(f(a + i * h) for i in range(1, n)))
 
 def simpson(f, a, b, n):
-    if n % 2:
-        n += 1
     h = (b - a) / n
     return h / 3 * (f(a) + 2 * sum(f(a + i * h) for i in range(2, n, 2)) +
                     4 * sum(f(a + i * h) for i in range(1, n, 2)) + f(b))
